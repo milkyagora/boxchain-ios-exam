@@ -8,13 +8,9 @@
 
 import UIKit
 
-class MyTableViewCell: UITableViewCell{
-}
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var myTableView: UITableView!
-    var userArray = [User]()
     var fieldArray = [Field]()
     var displayWidth = CGFloat()
     var displayHeight =  CGFloat()
@@ -27,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         displayHeight = self.view.frame.height
         
         myTableView = UITableView(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight - barHeight))
-        myTableView.register(MyTableViewCell.self, forCellReuseIdentifier: "cell")
+        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         myTableView.dataSource = self
         myTableView.delegate = self
         myTableView.tableFooterView = UIView()
